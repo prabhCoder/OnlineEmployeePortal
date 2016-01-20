@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h1 style="margin-top: 30px;">Add Salary</h1>
+	<h:form id="form" name="form">
+		<p:panel header="Profile" style="margin-bottom:10px; margin-top:50px;margin-left:300px;margin-right:300px;font-size:20px;text-align:center;display:block">
+			<p:messages id="msgs"></p:messages>
+			<h:panelGrid columns="2" cellpadding="5" style="text-align:left;">
+				<p:outputLabel value="Employee Id &#160;&#160;&#160;" style="color:#129894"></p:outputLabel>
+				<p:inputText value="#{dBConnector.empId}" id="empId" required="true" requiredMessage="Please enter Employee id"/>
+				<p:outputLabel value="Year" style="color:#129894"></p:outputLabel>
+				<p:inputText value="#{dBConnector.salaryYear}"  required="true" requiredMessage="Please enter year"/>
+				<p:outputLabel value="Month" style="color:#129894"></p:outputLabel>
+				<p:selectOneMenu id="id" value="#{dBConnector.salaryMonth}" required="true" requiredMessage="Please chose month"
+					style="width:150px">
+					<f:selectItem itemLabel="Select Month" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{dBConnector.months}" />
+				</p:selectOneMenu>
+				<p:outputLabel value="Amount (in Rs.)" style="color:#129894"></p:outputLabel>
+				<p:inputText value="#{dBConnector.salaryAmount}" required="true" requiredMessage="Please enter amount"/>
+
+				<p:commandButton value="Save" action="#{dBConnector.addSalary}"></p:commandButton>
+			</h:panelGrid>
+		</p:panel>
+			<h:commandButton value="Back" action="adminLoginSuccess.xhtml?faces-redirect=true" style="color:#129894;font-size:20px; border-radius: 25px;margin-left:300px;"
+					id="back" immediate="true"></h:commandButton>
+	</h:form>
+</h:body>
+</html>
+
+

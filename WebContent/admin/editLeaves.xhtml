@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h1 style="margin-top: 30px;">Edit Leaves</h1>
+
+	<h:form id="form" name="form">
+		<p:panel header="Profile" style="margin-bottom:10px; margin-top:50px;margin-left:300px;margin-right:300px;font-size:20px;text-align:center;display:block">
+			<h:panelGrid columns="2" cellpadding="5" style="text-align:left;">
+				<p:outputLabel value="Employee Id &#160;&#160;&#160;" style="color:#129894"></p:outputLabel>
+				<h:outputText value="#{dBConnector.leaveEmpId}" id="id" />
+				<p:outputLabel value="From Date" style="color:#129894"></p:outputLabel>
+				<p:outputLabel value="#{dBConnector.leaveFromDate}" id="fromDt" />
+				<p:outputLabel value="To Date" style="color:#129894"></p:outputLabel>
+				<p:outputLabel value="#{dBConnector.leaveToDate}" id="toDt" />
+				<p:outputLabel value="Status" style="color:#129894"></p:outputLabel>
+				<p:selectOneMenu id="statusId" value="#{dBConnector.leaveStatus}" required="true"
+					>
+					<f:selectItem itemLabel="Select Status" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItem itemLabel="Approve" itemValue="Approve"
+						noSelectionOption="true" />
+					<f:selectItem itemLabel="Disapprove" itemValue="Disapprove"
+						noSelectionOption="true" />
+				</p:selectOneMenu>
+				<p:commandButton value="Save" 
+					action="#{dBConnector.updateLeaveStatus}"></p:commandButton>
+			</h:panelGrid>
+		</p:panel>
+			<h:commandButton value="Back" action="viewLeaves.xhtml?faces-redirect=true" style="color:#129894;font-size:20px; border-radius: 25px;margin-left:300px;"
+					id="back" immediate="true"></h:commandButton>
+	</h:form>
+</h:body>
+</html>

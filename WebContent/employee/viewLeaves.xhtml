@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	
+</h:head>
+<h:body>
+	<h1 style="margin-top: 30px;">View Leaves</h1>
+	<h:form id="form" name="form">
+		<p:dataTable var="leave" value="#{dBConnector.leaves}" style="margin-bottom:10px; margin-top:50px;margin-left:300px;margin-right:300px;font-size:20px;text-align:center;display:block">
+
+			<p:column headerText="From Date">
+				<h:outputText value="#{leave.fromDate}" />
+			</p:column>
+
+			<p:column headerText="To Date">
+				<h:outputText value="#{leave.toDate}" />
+			</p:column>
+
+			<p:column headerText="Leave Status">
+				<h:outputText value="#{leave.status}" />
+			</p:column>
+		</p:dataTable>
+			<h:commandButton value="Back" action="empLoginSuccess.xhtml?faces-redirect=true" style="color:#129894;font-size:20px; border-radius: 25px;margin-left:300px;"
+					id="back" immediate="true"></h:commandButton>
+	</h:form>
+
+	
+
+</h:body>
+</html>
+
+

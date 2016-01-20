@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h1 style="margin-top: 30px;">View/Edit Profile</h1>
+	<h:form id="form" name="form">
+		<p:panel header="Profile" style="margin-bottom:10px; margin-top:50px;margin-left:300px;margin-right:300px;font-size:20px;text-align:center;display:block">
+			<h:panelGrid columns="2" cellpadding="5" style="text-align:left;">
+				<p:outputLabel value="Admin Id &#160;&#160;&#160;" style="color:#129894"></p:outputLabel>
+				<h:outputText value="#{dBConnector.adminId}" id="adminId" />
+				<p:outputLabel value="Name" style="color:#129894"></p:outputLabel>
+				<h:outputText value="#{dBConnector.adminName}" />
+				<p:outputLabel value="Username" style="color:#129894"></p:outputLabel>
+				<h:outputText value="#{dBConnector.adminUsername}" />
+				<p:outputLabel value="Password" style="color:#129894"></p:outputLabel>
+				<h:outputText value="#{dBConnector.adminPassword}" />
+
+				<p:commandButton value="Edit"
+					action="#{dBConnector.navigateToAdminEditProfile}"></p:commandButton>
+			</h:panelGrid>
+		</p:panel>
+			<h:commandButton value="Back" action="adminLoginSuccess.xhtml?faces-redirect=true" style="color:#129894;font-size:20px; border-radius: 25px;margin-left:300px;"
+					id="back" immediate="true"></h:commandButton>
+	</h:form>
+</h:body>
+</html>

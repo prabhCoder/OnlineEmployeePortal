@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	
+</h:head>
+<h:body>
+	<h:form id="form" name="form">
+		<p:panel header="Apply for Leaves"  style="margin-bottom:10px; margin-top:50px;margin-left:300px;margin-right:300px;font-size:20px;text-align:center;display:block">
+			<!-- <h:messages globalOnly="true" styleClass="validation_value_required" /> -->
+			<p:messages id="msgs" />
+			<h:panelGrid columns="2" cellpadding="5"  style="text-align:left;">
+				<p:outputLabel value="From Date &#160;&#160;&#160;&#160;&#160;" style="color:#129894"></p:outputLabel>
+				<p:calendar value="#{dBConnector.fromDate}" id="fromDate" required="true" requiredMessage="Please enter from date"
+					binding="#{startDateComponent}" />
+				<p:outputLabel value="To Date" style="color:#129894"></p:outputLabel>
+				<p:calendar value="#{dBConnector.toDate}" id="toDate"  required="true" requiredMessage="Please enter to date">
+					<!-- <f:validator validatorId="primeDateRangeValidator" />
+					<f:attribute name="startDateComponent"
+						value="#{startDateComponent}" /> -->
+				</p:calendar>
+				<!-- <h:message id="m_password" for="password" /> -->
+				<p:commandButton value="Apply" action="#{dBConnector.insertLeaves}"></p:commandButton>
+			</h:panelGrid>
+		</p:panel>
+			<h:commandButton value="Back" action="empLoginSuccess.xhtml?faces-redirect=true" style="color:#129894;font-size:20px; border-radius: 25px;margin-left:300px;"
+					id="back" immediate="true"></h:commandButton>
+	</h:form>
+	<p:dialog modal="true" resizable="false" header="Values"
+		widgetVar="dlg" showEffect="fold">
+		<p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+			<h:outputText value="Popup:" />
+			<h:outputText value="#{dBConnector.fromDate}">
+				<f:convertDateTime pattern="dd-MMM-yyyy hh:mm:ss a" locale="en"
+					timeZone="IST" />
+			</h:outputText>
+			<h:outputText value="#{dBConnector.toDate}">
+				<f:convertDateTime pattern="dd-MMM-yyyy hh:mm:ss a" locale="en"
+					timeZone="IST" />
+			</h:outputText>
+		</p:panelGrid>
+	</p:dialog>
+
+	
+</h:body>
+</html>

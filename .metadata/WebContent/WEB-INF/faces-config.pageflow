@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14507422343980" configfile="/OnlineEmployeePortal/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="empLoginSuccess.xhtml" x="143" y="106" id="pf14507565269954" referenceLink="//@navigationRule.0/@fromViewId|" path="/empLoginSuccess.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="viewProfile.xhtml" x="373" y="161" id="pf14507565269956" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" path="/viewProfile.xhtml"/>
+</pageflow:Pageflow>

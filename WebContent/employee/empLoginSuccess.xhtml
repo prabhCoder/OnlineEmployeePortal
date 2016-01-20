@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	
+</h:head>
+<h:body>
+	
+	<f:metadata>
+		<f:viewParam name="username" value="#{dBConnector.username}" />
+	</f:metadata>
+
+	<h:form id="formId" name="formId">
+		<p:panel header="List of Services" style="margin-bottom:10px; margin-top:50px;margin-left:300px;margin-right:300px;font-size:20px;text-align:center;display:block">
+			<h:panelGrid columns="1" cellpadding="10"  style="margin-right:100px;margin-left:40%;text-align:center;">
+
+				<p:commandLink value="View/Edit Profile" style="color:#129894"
+					action="#{dBConnector.viewProfile}" id="buttonId" ></p:commandLink>
+
+				<p:commandLink value="Apply Leave" style="color:#129894"
+					action="#{dBConnector.navigateToLeavePg}" id="buttonId1"></p:commandLink>
+
+				<p:commandLink value="Add Timesheet" style="color:#129894"
+					action="#{dBConnector.getAllProjects}" id="buttonId2"></p:commandLink>
+
+				<p:commandLink value="View Leaves" style="color:#129894"
+					action="#{dBConnector.viewLeaves}" id="buttonId3"></p:commandLink>
+
+				<p:commandLink value="View Timesheet" style="color:#129894"
+					action="#{dBConnector.viewTimesheet}" id="buttonId4"></p:commandLink>
+
+				<p:commandLink value="View Salary" style="color:#129894"
+					action="#{dBConnector.viewSalary}" id="buttonId5"></p:commandLink>
+
+				<p:commandLink value="Logout" action="#{dBConnector.doLogout}" style="color:#129894"
+					id="logout"></p:commandLink>
+			</h:panelGrid>
+		</p:panel>
+		
+				<h:commandButton value="Back" action="/index.xhtml?faces-redirect=true" style="color:#129894;font-size:20px; border-radius: 25px;margin-left:300px;"
+					id="back" immediate="true"></h:commandButton>
+	</h:form>
+	
+</h:body>
+</html>

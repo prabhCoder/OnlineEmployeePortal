@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	
+	<managed-bean>
+		<managed-bean-name>employeeProfile</managed-bean-name>
+		<managed-bean-class>model.EmployeeProfile</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>dBConnector</managed-bean-name>
+		<managed-bean-class>controller.DBConnector</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>adminProfile</managed-bean-name>
+		<managed-bean-class>model.AdminProfile</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+	<!-- <navigation-rule> <display-name>index.xhtml</display-name> <from-view-id>/index.xhtml</from-view-id> 
+		<navigation-case> <to-view-id>/empLoginSuccess.xhtml</to-view-id> <redirect> 
+		<redirect-param> <name>username</name> <value>#{checkLogin.username}</value> 
+		</redirect-param> </redirect> </navigation-case> </navigation-rule> -->
+</faces-config>

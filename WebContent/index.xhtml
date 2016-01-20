@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<!-- HEADER -->
+	<ui:insert name="header">
+		<ui:include src="/header.html" />
+	</ui:insert>
+	<br />
+	<hr />
+</h:head>
+<h:body style="background-color: white;">
+
+	<h:panelGrid columns="2" cellpadding="5" width="100%"
+		style="margin-left:100px;margin-right:50px;margin-top:80px;">
+		<h:form id="formId" name="formId">
+			<p:panel header="Employee Login"
+				style="margin-bottom:10px;background-color:#b3ecff;" id="panel">
+				<p:messages id="msgs" />
+				<h:panelGrid columns="2" cellpadding="5">
+					<p:outputLabel value="Username" for="username"></p:outputLabel>
+					<p:inputText name="username" id="username" required="true"
+						requiredMessage="Please enter username"
+						value="#{employeeProfile.username}">
+						<f:validateLength minimum="5" />
+					</p:inputText>
+					<p:outputLabel value="Password" for="password"></p:outputLabel>
+					<p:inputText name="password" id="password" required="true"
+						requiredMessage="Please enter password"
+						value="#{employeeProfile.password}"></p:inputText>
+
+					<p:commandButton value="Submit" update="panel"
+						action="#{dBConnector.employeeAuthentication}" id="buttonId" />
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+
+		<h:form id="formId1" name="formId1">
+			<p:panel header="Admin Login"
+				style="margin-left:100px;margin-right:200px;background-color:#b3ecff;"
+				id="panel">
+				<p:messages id="msgs" />
+				<h:panelGrid columns="2" cellpadding="5">
+					<p:outputLabel value="Username" for="username"></p:outputLabel>
+					<p:inputText name="username" id="username" required="true"
+						requiredMessage="Please enter username"
+						value="#{adminProfile.username}">
+						<f:validateLength minimum="5" />
+					</p:inputText>
+					<p:outputLabel value="Password" for="password"></p:outputLabel>
+					<p:inputText name="password" id="password" required="true"
+						requiredMessage="Please enter password"
+						value="#{adminProfile.password}"></p:inputText>
+
+					<p:commandButton value="Submit" update="panel"
+						action="#{dBConnector.adminAuthentication}" id="buttonId" />
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</h:panelGrid>
+
+	<!-- FOOTER -->
+	<ui:insert name="footer">
+		<ui:include src="/footer.html" />
+	</ui:insert>
+
+</h:body>
+</html>
